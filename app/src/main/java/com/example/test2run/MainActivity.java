@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Timer;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     int repeat_num=0;
     int num;
     int timer=0;
-    int i;
+    int i=0;
     String[] song={"See You Again",
             "Places Like That",
             "Frequency 75",
@@ -222,28 +223,33 @@ public class MainActivity extends AppCompatActivity {
             },0,1000);
             songName.setText(song[i]);
             artistName.setText(artist[i]);
+            int img=R.drawable.wallpaper;
             switch(i){
-                 case 0: wallpaper.setImageResource(R.drawable.wallpaper);
+                 case 0:        img=R.drawable.wallpaper;
                  break;
-                 case 1: wallpaper.setImageResource(R.drawable.song1);
+                 case 1: img=R.drawable.song1;
                  break;
-                 case 2: wallpaper.setImageResource(R.drawable.song2);
+                 case 2: img=R.drawable.song2;
                  break;
-                 case 3: wallpaper.setImageResource(R.drawable.song3);
+                 case 3: img=R.drawable.song3;
                  break;
-                 case 4: wallpaper.setImageResource(R.drawable.song4);
+                 case 4: img=R.drawable.song4;
                  break;
-                 case 5: wallpaper.setImageResource(R.drawable.song5);
+                 case 5: img=R.drawable.song5;
                  break;
-                 case 6: wallpaper.setImageResource(R.drawable.song6);
+                 case 6: img=R.drawable.song6;
                  break;
-                 case 7: wallpaper.setImageResource(R.drawable.song7);
+                 case 7: img=R.drawable.song7;
                  break;
-                 case 8: wallpaper.setImageResource(R.drawable.song8);
+                 case 8: img=R.drawable.song8;
                  break;
-                 case 9: wallpaper.setImageResource(R.drawable.song9);
+                 case 9: img=R.drawable.song9;
                  break;
             }
+
+        Glide.with(getApplicationContext())
+                .load(img)
+                .into(wallpaper);
 
     }
 
